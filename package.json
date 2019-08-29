@@ -1,0 +1,56 @@
+{
+  "name": "devtest-wilbur-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "version": "json -I -f package.json -e 'this.version=process.env.BUILDVERSION'",
+    "zip": "zip -r --exclude=*.git* --exclude=*iac* wilbur.lambda.zip .",
+    "pack": "npm-pack-zip",
+    "lint": "eslint --fix .",
+    "test": "jest ./test/unit/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/DevTest-Wilbur-Lambda"
+  },
+  "author": "Kaushal Trivedi",
+  "license": "ISC",
+  "dependencies": {
+    "email-validator": "^1.1.1",
+    "eol": "^0.9.1",
+    "fs": "0.0.1-security",
+    "json": "^9.0.6",
+    "https": "^1.0.0",
+    "https-proxy-agent": "^2.2.1",
+    "i18n": "^0.8.3",
+    "mailcheck": "^1.1.1",
+    "moment-timezone": "^0.5.13",
+    "postcode": "^0.2.5",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.82.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.8.0",
+    "lambda-local": "^1.4.2",
+    "npm-pack-zip": "^1.2.7",
+    "prettier": "^1.17.0"
+  },
+  "bundleDependencies": [
+    "email-validator",
+    "eol",
+    "fs",
+    "json",
+    "https",
+    "https-proxy-agent",
+    "i18n",
+    "mailcheck",
+    "moment-timezone",
+    "postcode",
+    "querystring"
+  ]
+}
